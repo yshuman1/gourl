@@ -1,8 +1,12 @@
+//tutorial url: https://www.kieranajp.uk/articles/build-url-shortener-api-golang/
+
 package main
 
 import (
 	"fmt"
 	"os"
+
+	redis "gopkg.in/redis.v4"
 
 	"github.com/kataras/iris"
 )
