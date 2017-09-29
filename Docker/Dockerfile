@@ -1,6 +1,5 @@
 FROM golang:1.6-alpine
 
-
 ENV APP_DIR $GOPATH/src/github.com/yshuman1/gourl
 
 ADD . $APP_DIR
