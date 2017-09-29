@@ -1,0 +1,22 @@
+version: '2'
+services:
+    go:
+        build: ./docker
+        ports:
+            - "3000:3000"
+        external_links:
+            - redis
+        volumes:
+            # Add your own Github username
+            - .:/go/src/github.com/yshuman1/gourl
+        environment:
+            - REDIS_HOST=redis
+            - REDIS_PORT=6379
+            - IRIS_PORT=3001
+            - DEBUG=true
+
+    redis:
+        image: redis:3.2-alpine
+        volumes:
+            - ./docker/storage/redis:/data
+        command: redis-server --appendonly yes
